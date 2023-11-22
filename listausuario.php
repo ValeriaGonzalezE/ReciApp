@@ -1,4 +1,20 @@
 <?php
+    session_start();
+    if(!isset($_SESSION['usuario'])){
+        echo'
+            <script>
+                alert("Por favor debes iniciar sesion");
+                window.location ="iniciar_usuario.php";
+            </script>
+        ';
+        //header("location: iniciar_usuario.php");
+        session_destroy();
+        die();
+    }
+
+?>
+<?php
+
 // Configuración de la conexión a la base de datos
 $servername = "localhost";
 $username = "root";
@@ -111,6 +127,7 @@ echo "<style>
         background-color: rgb(49, 35, 141, 0.4);
     }
 </style>";
+
 echo "<div style='max-height: 1000px; overflow: auto;'>";
 // Verificar si hay resultados
 if ($result->num_rows > 0) {

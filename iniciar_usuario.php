@@ -1,9 +1,9 @@
 <?php
-    session_start();
-    if(isset($_SESSION['usuario'])){
-        header("location: bienvenida.php");
-    }
-    
+ session_start();
+ if(isset($_SESSION['usuario'])){
+     header("location: bienvenida.php");
+ }   
+
 ?>
 
 <!DOCTYPE html>
