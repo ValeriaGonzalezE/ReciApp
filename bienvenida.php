@@ -11,6 +11,7 @@
         session_destroy();
         die();
     }
+
 ?>
 
 <!DOCTYPE html>
@@ -23,10 +24,11 @@
     <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css">
 </head>
+
 <body>
 
     <main>
-
+    
         <h1>Panel de control</h1>
 
         <div class="container__box">
@@ -59,7 +61,7 @@
             </div>
             <script>
                 function redirigirAlistaPHP() {
-                 window.location.href = 'listausuarios.php';
+                 window.location.href = 'listausuario.php';
                  }
             </script>
 

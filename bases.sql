@@ -789,6 +789,9 @@ ALTER TABLE `tipo_vehiculo`
 --
 ALTER TABLE `usuarios`
   MODIFY `usuario_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+--
+-- AUTO_INCREMENT de la tabla `Vehiculo`
+--
 
 --
 -- AUTO_INCREMENT de la tabla `visitantes`
