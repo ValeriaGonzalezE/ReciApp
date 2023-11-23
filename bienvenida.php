@@ -24,7 +24,14 @@
     <link href="https://cdn.lineicons.com/3.0/lineicons.css" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css">
 </head>
-
+<style>
+        /* Agrega estilos personalizados aquí */
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'poppins',sans-serif;
+        }
+</style>
 <body>
 
     <main>
@@ -61,7 +68,7 @@
             </div>
             <script>
                 function redirigirAlistaPHP() {
-                 window.location.href = 'listausuario.php';
+                 window.location.href = 'listaresidentes.php';
                  }
             </script>
 
@@ -73,6 +80,17 @@
             <script>
                 function redirigirAvehiculoPHP() {
                  window.location.href = 'registrovehiculo.php';
+                 }
+            </script>
+
+<div class="box" onclick="redirigirAlistavehiculoPHP()">
+                <i class="lni lni-car-alt"></i>
+                <h5>Lista de sus vehiculos</h5>
+                <h4>Lista Vehiculos</h4>
+            </div>
+            <script>
+                function redirigirAlistavehiculoPHP() {
+                 window.location.href = 'listarvehiculos.php';
                  }
             </script>
 

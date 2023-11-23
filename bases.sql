@@ -94,11 +94,18 @@ CREATE TABLE `entradas` (
 --
 
 INSERT INTO `entradas` (`entrada_id`, `usuaro_id`, `funcionario_id`, `fecha`, `hora`) VALUES
-(1, 2, 4, '0000-00-00', '10:23:00'),
+(1, 2, 4, '2023-11-27', '10:23:00'),
 (2, 4, 9, '0000-00-00', '22:37:00'),
 (3, 5, 4, '0000-00-00', '07:15:00'),
 (4, 45, 10, '0000-00-00', '13:16:00'),
-(5, 16, 10, '0000-00-00', '13:24:00');
+(5, 16, 10, '0000-00-00', '13:24:00'),
+(6, 4, 9, '2023-11-06', '22:37:00'),
+(7, 4, 9, '2023-11-15', '22:37:00'),
+(8, 4, 9, '2023-11-23', '22:37:00'),
+(9, 4, 9, '2023-11-07', '22:37:00'),
+(10, 4, 9, '2023-11-11', '20:22:02'),
+(11, 4, 9, '2023-11-20', '19:14:02'),
+(12, 4, 9, '2023-11-12', '13:06:02');
 
 -- --------------------------------------------------------
 
@@ -311,79 +318,99 @@ INSERT INTO `parqueaderos` (`parqueadero_id`, `parqueadero_1`, `parqueadero_2`) 
 
 CREATE TABLE `residentes` (
   `residente_id` int(11) NOT NULL,
-  `usuario_id` int(11) NOT NULL,
-  `inmueble_id` int(11) NOT NULL,
-  `encargado` tinyint(1) NOT NULL
+  `usuario_id` double DEFAULT NULL,
+  `inmueble_id` double DEFAULT NULL,
+  `encargado` varchar(10) DEFAULT NULL,
+  `documento` double DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `residentes`
 --
 
-INSERT INTO `residentes` (`residente_id`, `usuario_id`, `inmueble_id`, `encargado`) VALUES
-(1, 1, 5, 0),
-(2, 2, 38, 0),
-(3, 3, 8, 0),
-(4, 4, 6, 0),
-(5, 5, 4, 0),
-(6, 6, 30, 0),
-(7, 7, 15, 0),
-(8, 8, 8, 0),
-(9, 9, 27, 0),
-(10, 10, 15, 0),
-(11, 11, 26, 0),
-(12, 12, 8, 0),
-(13, 13, 29, 0),
-(14, 14, 14, 0),
-(15, 15, 16, 0),
-(16, 16, 1, 0),
-(17, 17, 6, 0),
-(18, 18, 23, 0),
-(19, 19, 18, 0),
-(20, 20, 21, 0),
-(21, 21, 10, 0),
-(22, 22, 20, 0),
-(23, 23, 22, 0),
-(24, 24, 20, 0),
-(25, 25, 16, 0),
-(26, 26, 16, 0),
-(27, 27, 36, 0),
-(28, 28, 14, 0),
-(29, 29, 25, 0),
-(30, 30, 2, 0),
-(31, 31, 2, 0),
-(32, 32, 11, 0),
-(33, 33, 28, 0),
-(34, 34, 35, 0),
-(35, 35, 39, 0),
-(36, 36, 34, 0),
-(37, 37, 6, 0),
-(38, 38, 3, 0),
-(39, 39, 13, 0),
-(40, 40, 7, 0),
-(41, 41, 24, 0),
-(42, 42, 13, 0),
-(43, 43, 12, 0),
-(44, 44, 17, 0),
-(45, 45, 19, 0),
-(46, 46, 40, 0),
-(47, 47, 4, 0),
-(48, 48, 9, 0),
-(49, 49, 14, 0),
-(50, 50, 33, 0),
-(51, 51, 1, 0),
-(52, 52, 6, 0),
-(53, 53, 1, 0),
-(54, 54, 31, 0),
-(55, 55, 4, 0),
-(56, 56, 32, 0),
-(57, 57, 37, 0),
-(58, 58, 7, 0),
-(59, 59, 9, 0),
-(60, 60, 12, 0);
+INSERT INTO `residentes` (`residente_id`, `usuario_id`, `inmueble_id`, `encargado`, `documento`) VALUES
+(1, 1, 5, 'si', 106812902),
+(2, 2, 38, 'si', 104834919),
+(3, 3, 8, 'si', 104941837),
+(4, 4, 6, 'si', 104567624),
+(5, 5, 4, 'no', 105743722),
+(6, 6, 30, 'si', 106064476),
+(7, 7, 15, 'si', 105850640),
+(8, 8, 8, 'no', 105422968),
+(9, 9, 27, 'si', 106117935),
+(10, 10, 15, 'no', 103658821),
+(11, 11, 26, 'si', 107080197),
+(12, 12, 8, 'no', 103872657),
+(13, 13, 29, 'si', 103017313),
+(14, 14, 14, 'si', 106011017),
+(15, 15, 16, 'si', 103551903),
+(16, 16, 1, 'si', 106385230),
+(17, 17, 6, 'no', 104193411),
+(18, 18, 23, 'si', 106545607),
+(19, 19, 18, 'si', 103177690),
+(20, 20, 21, 'si', 107400951),
+(21, 21, 10, 'si', 104086493),
+(22, 22, 20, 'no', 107187115),
+(23, 23, 22, 'si', 103979575),
+(24, 24, 20, 'si', 103070772),
+(25, 25, 16, 'no', 106278312),
+(26, 26, 16, 'no', 105957558),
+(27, 27, 36, 'si', 103926116),
+(28, 28, 14, 'no', 104460706),
+(29, 29, 25, 'si', 104246870),
+(30, 30, 2, 'no', 104781460),
+(31, 31, 2, 'si', 106866361),
+(32, 32, 11, 'si', 103338067),
+(33, 33, 28, 'si', 107026738),
+(34, 34, 35, 'si', 106599066),
+(35, 35, 39, 'si', 103605362),
+(36, 36, 34, 'si', 201453681),
+(37, 37, 6, 'no', 104995296),
+(38, 38, 3, 'si', 106492148),
+(39, 39, 13, 'si', 103498444),
+(40, 40, 7, 'si', 102910395),
+(41, 41, 24, 'si', 106759443),
+(42, 42, 13, 'no', 106705984),
+(43, 43, 12, 'si', 103391526),
+(44, 44, 17, 'si', 103444985),
+(45, 45, 19, 'si', 102750018),
+(46, 46, 40, 'si', 107347492),
+(47, 47, 4, 'si', 107454410),
+(48, 48, 9, 'si', 106973279),
+(49, 49, 14, 'no', 102453694),
+(50, 50, 33, 'si', 105048755),
+(51, 51, 1, 'no', 105102214),
+(52, 52, 6, 'no', 105529886),
+(53, 53, 1, 'no', 102589641),
+(54, 54, 31, 'si', 105636804),
+(55, 55, 4, 'no', 124756310),
+(56, 56, 32, 'si', 106224853),
+(57, 57, 37, 'si', 104139952),
+(58, 58, 7, 'no', 105155673),
+(59, 59, 9, 'no', 102803477),
+(60, 60, 12, 'no', 105797181);
 
 -- --------------------------------------------------------
+--
+-- Estructura de tabla para la tabla `salidas`
+--
 
+CREATE TABLE `salidas` (
+  `salidas_id` int(11) NOT NULL,
+  `usuario_id` int(11) NOT NULL,
+  `funcionario_id` int(11) NOT NULL,
+  `fecha` date NOT NULL,
+  `hora` time NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `salidas`
+--
+
+INSERT INTO `salidas` (`salidas_id`, `usuario_id`, `funcionario_id`, `fecha`, `hora`) VALUES
+(1, 4, 9, '2023-11-21', '04:16:08');
+
+-- --------------------------------------------------------
 --
 -- Estructura de tabla para la tabla `tipo_usuaro`
 --
@@ -701,6 +728,12 @@ ALTER TABLE `parqueaderos`
 --
 ALTER TABLE `residentes`
   ADD PRIMARY KEY (`residente_id`);
+  
+--
+-- Indices de la tabla `salidas`
+--
+ALTER TABLE `salidas`
+  ADD PRIMARY KEY (`salidas_id`);
 
 --
 -- Indices de la tabla `tipo_usuaro`
@@ -719,6 +752,12 @@ ALTER TABLE `tipo_vehiculo`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`usuario_id`);
+
+--
+-- Indices de la tabla `vehiculos`
+--
+ALTER TABLE `vehiculos`
+  ADD PRIMARY KEY (`vehiculo_id`);
 
 --
 -- Indices de la tabla `visitantes`
@@ -792,7 +831,8 @@ ALTER TABLE `usuarios`
 --
 -- AUTO_INCREMENT de la tabla `Vehiculo`
 --
-
+ALTER TABLE `vehiculos`
+  MODIFY `vehiculo_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 --
 -- AUTO_INCREMENT de la tabla `visitantes`
 --
